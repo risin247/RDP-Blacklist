@@ -51,11 +51,11 @@ function trimAndBL{
     }
     $trim | %{$ips.Remove($_)}
 }
-#addBlacklistIP -newIP "12.12.12.12"
+
 $saveFile= "C:\Users\Public\watcher.xml"
 $logfile = "C:\Users\Public\blacklist.log"
-#$test = Get-NetFirewallRule -DisplayName "RDP *"
-#$events = Get-EventLog Security -EntryType FailureAudit -After (Get-Date).AddHours(-12) | select TimeGenerated, @{Name="Username";Expression={$_.replacementStrings[5]}}, @{Name="IP";Expression={$_.replacementStrings[19]}}
+
+
 
 #checks to see if FW Rule Exists
 $ruleExists = -not ((Get-NetFirewallRule -DisplayName "RDP Blacklist" -ErrorAction SilentlyContinue) -eq $null)
